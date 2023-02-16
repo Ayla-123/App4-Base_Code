@@ -38,7 +38,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	//YOUR JAVASCRIPT GOES HERE
+	var allergy_count = 0;//variable that counts allergy answers
+        var cold_count = 0;//variable that counts cold answers
+
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;//if the question answered is for allergy, it adds 1 to allergy count
+		alert(allergy_count);//pop-up of count when question answered is for allergy
+        }//total function calculates the number of allergy related responses
+
+        function coldAdd(){
+            cold_count = cold_count + 1;//if question answered is for cold, it adds 1 to cold count
+        }//total function calculates the number of cold related responses
+	
+	function getresults(){
+		var allergyPercent = (allergy_count)/(6)*100;//calculates percent chance of allergy by taking total allergy count, dividing it by total number of questions, and multiplying by 100
+		var coldPercent = (cold_count)/(6)*100//calculates percent chance of cold by taking total cold count, dividing it by total number of questions, and multiplying by 100
+			document.getElementById("results").innerHTML =  "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;//displays percent chances of allergy and cold on screen
+	}
 
 </script>	
 
@@ -68,8 +84,107 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+<div id="header" class="w3-container w3-flat-wisteria">
+	<h1>Cold or Allergies?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	
+	<img src="https://static.wixstatic.com/media/39a8a6_67159eb0501c49b2a6808b8071c34548~mv2.png/v1/fit/w_768%2Ch_512%2Cal_c/file.png" alt="Bronchitis vs Pneumonia Venn Diagram">
+
+	
+<!--page 1 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-wisteria">
+		<h1>Question 1</h1>
+	</div>
+	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> Yes</a>
+	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-grey w3-round"> No</a>
+    	<div id="content" class="w3-container">
+        <p>Are your eyes watery or itchy?</p>    
+    	</div>
+</div>
+
+<!--page 2 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->
+<div class="page" id="two">
+	<div class="w3-container w3-flat-wisteria">
+		<h1>Question 2</h1>
+	</div>
+	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes</a>
+	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No</a>
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+	</div>
+</div>	
+
+<!--page 3 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->
+<div class="page" id="three">
+	<div class="w3-container w3-flat-wisteria">
+		<h1>Question 3</h1>
+	</div>
+	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes</a>
+	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No</a>
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+	</div>
+</div>	
+
+<!--page 4 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->	
+<div class="page" id="four">
+	<div class="w3-container w3-flat-wisteria">
+		<h1>Question 4</h1>
+	</div>
+	<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> Yes</a>
+	<a href="#five"  onclick="coldAdd();" class="w3-btn w3-grey w3-round"> No</a>
+	<div id="content" class="w3-container">
+		<p>Are your symptoms seasonal or chronic?</p>
+	</div>
+</div>	
+
+<!--page 5 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->
+<div class="page" id="five">
+	<div class="w3-container w3-flat-wisteria">
+		<h1>Question 5</h1>
+	</div>
+	<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> Yes</a>
+	<a href="#six"  onclick="coldAdd();" class="w3-btn w3-grey w3-round"> No</a>
+	<div id="content" class="w3-container">
+		<p>Are your symptoms long lasting, over 1-2 weeks?</p>
+	</div>
+</div>	
+
+<!--page 6 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->
+<div class="page" id="six">
+	<div class="w3-container w3-flat-wisteria">
+		<h1>Question 6</h1>
+	</div>
+	<a href="#seven"  onclick="coldAdd();" class="w3-btn w3-grey w3-round"> Yes</a>
+	<a href="#seven"  onclick="allergyAdd();" class="w3-btn w3-grey w3-round"> No</a>
+	<div id="content" class="w3-container">
+		<p>Do you have body aches/pains?</p>
+	</div>
+</div>	
+
+<!--page 7 of app; titled results page, added results button which shows probability of allergy and cold when clicked-->
+<div class="page" id="seven">
+	<div class="w3-container w3-flat-wisteria">
+		<h1>Results</h1>
+	</div>
+	<div id="content" class="w3-container">
+		<p id="results"></p>
+		<button onclick="getresults()">Results</button>
+	</div>
+</div>
+<footer class="w3-bottom w3-container w3-flat-wisteria">
+	<p>DIY!</p>
+</footer>
 	
 </body>
 </html>
