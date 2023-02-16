@@ -51,8 +51,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         }//total function calculates the number of cold related responses
 	
 	function getresults(){
-		var bronchitisPercent = (bronchitis_count)/(6)*100;//calculates percent chance of allergy by taking total allergy count, dividing it by total number of questions, and multiplying by 100
-		var pneumoniaPercent = (pneumonia_count)/(6)*100//calculates percent chance of cold by taking total cold count, dividing it by total number of questions, and multiplying by 100
+		var bronchitisPercent = (bronchitis_count)/(4)*100;//calculates percent chance of allergy by taking total allergy count, dividing it by total number of questions, and multiplying by 100
+		var pneumoniaPercent = (pneumonia_count)/(4)*100//calculates percent chance of cold by taking total cold count, dividing it by total number of questions, and multiplying by 100
 			document.getElementById("results").innerHTML =  "Probability it is bronchitis =" + bronchitisPercent + "<br> Probability it is pneumonia =" + pneumoniaPercent;//displays percent chances of allergy and cold on screen
 	}
 
