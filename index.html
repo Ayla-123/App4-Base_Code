@@ -6,8 +6,8 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
+Ayla Amjad
 Tim Riedel
-Author 2
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The main goal of this code is to create an app that someone can use to figure out if they have bronchitis or pneumonia. The app will ask 4 yes/no questions regarding various symptoms, and in the end it will display the results.
  
 Known Issues:
-blah, blah, blah, blah
+There is a space above my header with a bracket
 Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
 
 References:
@@ -38,22 +38,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	var bronchitis_count = 0;//variable that counts allergy answers
-        var pneumonia_count = 0;//variable that counts cold answers
+	var bronchitis_count = 0;//variable that counts bronchitis answers
+        var pneumonia_count = 0;//variable that counts pneumonia answers
 
         function bronchitisAdd(){
-            bronchitis_count = bronchitis_count + 1;//if the question answered is for allergy, it adds 1 to allergy count
-		alert(bronchitis_count);//pop-up of count when question answered is for allergy
-        }//total function calculates the number of allergy related responses
+            bronchitis_count = bronchitis_count + 1;//if the question answered is for bronchitis, it adds 1 to bronchitis count
+		alert(bronchitis_count);//pop-up of count when question answered is for bronchitis
+        }//total function calculates the number of bronchitis related responses
 
         function pneumoniaAdd(){
-            pneumonia_count = pneumonia_count + 1;//if question answered is for cold, it adds 1 to cold count
-        }//total function calculates the number of cold related responses
+            pneumonia_count = pneumonia_count + 1;//if question answered is for pneumonia, it adds 1 to pneumonia count
+        }//total function calculates the number of pneumonia related responses
 	
 	function getresults(){
-		var bronchitisPercent = (bronchitis_count)/(4)*100;//calculates percent chance of allergy by taking total allergy count, dividing it by total number of questions, and multiplying by 100
-		var pneumoniaPercent = (pneumonia_count)/(4)*100//calculates percent chance of cold by taking total cold count, dividing it by total number of questions, and multiplying by 100
-			document.getElementById("results").innerHTML =  "Probability it is bronchitis =" + bronchitisPercent + "<br> Probability it is pneumonia =" + pneumoniaPercent;//displays percent chances of allergy and cold on screen
+		var bronchitisPercent = (bronchitis_count)/(4)*100;//calculates percent chance of bronchitis by taking total bronchitis count, dividing it by total number of questions, and multiplying by 100
+		var pneumoniaPercent = (pneumonia_count)/(4)*100//calculates percent chance of pneumonia by taking total pneumonia count, dividing it by total number of questions, and multiplying by 100
+			document.getElementById("results").innerHTML =  "Probability it is bronchitis =" + bronchitisPercent + "<br> Probability it is pneumonia =" + pneumoniaPercent;//displays percent chances of bronchitis and pneumonia on screen
 	}
 
 </script>	
@@ -99,7 +99,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<img src="https://static.wixstatic.com/media/39a8a6_67159eb0501c49b2a6808b8071c34548~mv2.png/v1/fit/w_768%2Ch_512%2Cal_c/file.png" alt="Bronchitis vs Pneumonia Venn Diagram">
 
 	
-<!--page 1 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->
+<!--page 1 of app; changed question, added code to make yes/no buttons, response goes to function for bronchitis and pneumonia -->
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-wisteria">
 		<h1>Question 1</h1>
@@ -111,7 +111,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	</div>
 </div>
 
-<!--page 2 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->
+<!--page 2 of app; changed question, added code to make yes/no buttons, response goes to function for bronchitis and pneumonia -->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-wisteria">
 		<h1>Question 2</h1>
@@ -123,7 +123,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 
-<!--page 3 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->
+<!--page 3 of app; changed question, added code to make yes/no buttons, response goes to function for bronchitis and pneumonia -->
 <div class="page" id="three">
 	<div class="w3-container w3-flat-wisteria">
 		<h1>Question 3</h1>
@@ -135,7 +135,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 
-<!--page 4 of app; changed question, added code to make yes/no buttons, response goes to function for allergy and cold -->	
+<!--page 4 of app; changed question, added code to make yes/no buttons, response goes to function for bronchitis and pneumonia -->	
 <div class="page" id="four">
 	<div class="w3-container w3-flat-wisteria">
 		<h1>Question 4</h1>
@@ -148,7 +148,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>	
 
 
-<!--page 5 of app; titled results page, added results button which shows probability of allergy and cold when clicked-->
+<!--page 5 of app; titled results page, added results button which shows probability of bronchitis and pneumonia when clicked-->
 <div class="page" id="five">
 	<div class="w3-container w3-flat-wisteria">
 		<h1>Results</h1>
